@@ -63,7 +63,7 @@ beautiful.init(awful.util.getdir("config") .. "/themes/powerarrow-darker/theme.l
 -- common
 modkey     = "Mod4"
 altkey     = "Mod1"
-terminal   = "urxvtc" or "xterm"
+terminal   = "urxvt"
 editor     = os.getenv("EDITOR") or "nano" or "vi"
 editor_cmd = terminal .. " -e " .. editor
 
