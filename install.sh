@@ -1,6 +1,6 @@
 #!/bin/sh
-# FIXME
-cp -rf home-dotfiles/* ~
+# Install dotfiles
+cp -rf home-dotfiles/.[a-z]* ~
 
 # Set zsh as shell
 chsh -s /bin/zsh
