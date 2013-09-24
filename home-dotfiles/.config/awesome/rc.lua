@@ -232,6 +232,8 @@ volumewidget = lain.widgets.alsa({
     end
 })
 
+
+
 -- Net
 neticon = wibox.widget.imagebox(beautiful.widget_net)
 neticon:buttons(awful.util.table.join(awful.button({ }, 1, function () awful.util.spawn_with_shell(iptraf) end)))
@@ -501,6 +503,18 @@ globalkeys = awful.util.table.join(
             awful.util.spawn("amixer -q set Master playback 100%")
             volumewidget.update()
         end),
+
+    -- Thinkpad audio controls
+    awful.key({ }, "XF86AudioRaiseVolume", function ()
+       awful.util.spawn("amixer set Master 9%+", false) end),
+    awful.key({ }, "XF86AudioLowerVolume", function ()
+       awful.util.spawn("amixer set Master 9%-", false) end),
+    awful.key({ }, "XF86AudioMute", function ()
+       awful.util.spawn("amixer sset Master toggle", false) end),
+
+    -- screensaver (iblue)
+    awful.key({                  }, "F12", function () awful.util.spawn("xscreensaver-command -lock") end),
+
 
     -- MPD control
     awful.key({ altkey, "Control" }, "Up",
