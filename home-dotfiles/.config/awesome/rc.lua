@@ -68,7 +68,7 @@ editor     = os.getenv("EDITOR") or "nano" or "vi"
 editor_cmd = terminal .. " -e " .. editor
 
 -- user defined
-browser    = "dwb"
+browser    = "google-chrome"
 browser2   = "iron"
 gui_editor = "gvim"
 graphics   = "gimp"
