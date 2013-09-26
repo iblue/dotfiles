@@ -46,16 +46,16 @@ local function worker(args)
         then
             local rate = first_line("/sys/class/power_supply/"
                                     .. battery ..
-                                    "/power_now")
+                                    "/current_now")
             local ratev = first_line("/sys/class/power_supply/"
                                     .. battery ..
                                      "/voltage_now")
             local rem = first_line("/sys/class/power_supply/"
                                     .. battery ..
-                                   "/energy_now")
+                                   "/charge_now")
             local tot = first_line("/sys/class/power_supply/"
                                     .. battery ..
-                                   "/energy_full")
+                                   "/charge_full")
             bat_now.status = first_line("/sys/class/power_supply/"
                                     .. battery ..
                                    "/status")
