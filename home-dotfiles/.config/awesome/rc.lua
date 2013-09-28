@@ -343,7 +343,7 @@ for s = 1, screen.count() do
     right_layout:add(volicon)
     right_layout:add(volumewidget)
     right_layout:add(arrl_ld)
-    right_layout:add(mailicon)
+    --right_layout:add(mailicon)
     --right_layout:add(mailwidget)
     right_layout:add(arrl_dl)
     right_layout:add(memicon)
@@ -511,6 +511,12 @@ globalkeys = awful.util.table.join(
        awful.util.spawn("amixer set Master 9%-", false) end),
     awful.key({ }, "XF86AudioMute", function ()
        awful.util.spawn("amixer sset Master toggle", false) end),
+
+    -- Thinkpad brightness controls
+    awful.key({ }, "XF86MonBrightnessDown", function ()
+        awful.util.spawn("xbacklight -dec 15") end),
+    awful.key({ }, "XF86MonBrightnessUp", function ()
+        awful.util.spawn("xbacklight -inc 15") end),
 
     -- screensaver (iblue)
     awful.key({                  }, "F12", function () awful.util.spawn("xscreensaver-command -lock") end),
