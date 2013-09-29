@@ -51,6 +51,8 @@ end
 
 run_once("urxvtd")
 run_once("unclutter")
+run_once("xscreensaver -nosplash")
+run_once("nm-applet --sm-disable")
 -- }}}
 
 -- {{{ Variable definitions
@@ -63,7 +65,7 @@ beautiful.init(awful.util.getdir("config") .. "/themes/powerarrow-darker/theme.l
 -- common
 modkey     = "Mod4"
 altkey     = "Mod1"
-terminal   = "urxvt"
+terminal   = "urxvtc"
 editor     = os.getenv("EDITOR") or "nano" or "vi"
 editor_cmd = terminal .. " -e " .. editor
 
